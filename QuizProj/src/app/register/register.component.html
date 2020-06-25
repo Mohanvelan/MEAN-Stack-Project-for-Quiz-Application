@@ -1,0 +1,83 @@
+
+<div class="container-fluid" >
+
+    <mat-card style='height:620px; width:770px'>
+      <mat-card-header>
+        <div class='mat-headline' style="padding:30px 0 20px 20px; margin-left:35px">SignUp Page</div>
+      </mat-card-header>
+      <mat-card-content>
+       	<form #frm='ngForm' (ngSubmit)='register(frm)'>
+        <mat-grid-list cols='12' rowHeight='400px'>
+
+         <mat-grid-tile colspan='6'>
+          <div>
+          <p> <mat-form-field>
+            <input type="text" name="uname" matInput placeholder="Username"
+           ngModel #uname='ngModel' required>
+           <mat-icon matSuffix><i class='fa fa-user fa-sm'></i></mat-icon>
+            <mat-error *ngIf='uname.touched && uname.errors?.required'>Username is required...</mat-error>
+          </mat-form-field></p> <br>
+
+          <p><mat-form-field>
+            <input type="text" name="email" matInput placeholder="Your Email-id"
+             ngModel #email='ngModel' required>
+             <mat-icon matSuffix><i class='fa fa-envelope fa-sm'></i></mat-icon>
+              <mat-error *ngIf='email.touched && email.errors?.required'>Email-id is required...</mat-error>
+          </mat-form-field></p><br>
+
+        <p>  <mat-form-field>
+            <input type="number" name="mobNo" matInput placeholder ='Your Mobile No.'
+             ngModel #phno='ngModel' required>
+             <mat-icon matSuffix><i class='fa fa-phone fa-sm'></i></mat-icon>
+              <mat-error *ngIf='phno.touched && phno.errors?.required'>Mobile no. is required...</mat-error>
+          </mat-form-field></p><br>
+
+          <p><mat-form-field>
+            <mat-label>Catagory</mat-label> :
+                            <mat-select matInput ngModel='' name='role'>
+                                <mat-option value='Job Seeker'>Job Seeker</mat-option>
+                                <mat-option value='Student'>Student</mat-option>
+                                 <mat-option value='Professional'>Professional</mat-option>
+                                <mat-option value='Skill Improver'>Skill Improver</mat-option>
+                        </mat-select>
+          </mat-form-field>
+          </p><br>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan='6'>
+      <div>
+              <p><mat-form-field>
+                <input type="password" name="password" matInput placeholder="Create Password"
+                ngModel #pwd='ngModel' minlength='5' required>
+                <mat-icon matSuffix><i class='fa fa-key fa-sm'></i></mat-icon>
+                <mat-error *ngIf='pwd.touched'>
+                  <mat-error *ngIf='pwd.errors?.required'>Password is required...</mat-error>
+                  <mat-error *ngIf='pwd.errors?.minlength'>Password should be atleast 5 characters...</mat-error>
+                </mat-error>
+              </mat-form-field></p><br>
+
+             <p><mat-form-field>
+                <input type="password" name="cpwd" matInput placeholder="Confirm Password"
+                 ngModel #cpwd='ngModel' style='width:200px' required>
+                 <mat-icon matSuffix><i class='fa fa-lock fa-sm'></i></mat-icon>
+                <mat-error *ngIf='cpwd.touched'>
+                <mat-error *ngIf='cpwd.errors?.required'>This field is required...</mat-error>
+                <mat-error *ngIf='pwd!=cpwd? true:false'>Password mismatch...</mat-error>
+                </mat-error>
+              </mat-form-field></p><br>
+        </div>
+            </mat-grid-tile>
+      </mat-grid-list>
+
+       <div class='mx-md-5'>
+         <a routerLink="/login" class="btn btn-link" >Already a User?</a>
+       <button name="sub" type='submit' class='btn btn-dark mb-md-5' style='border-radius:50px;width:120px; margin-left:600px'>SignUp</button>
+       </div>
+  </form>
+      </mat-card-content>
+    </mat-card>
+
+        <img src="./assets/signup.png" style="height:460px;width:620px;position:absolute;top:260px;left:800px;">
+
+    </div>

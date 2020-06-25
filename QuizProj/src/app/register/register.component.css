@@ -1,0 +1,14 @@
+
+input{
+  width:500px;
+}
+
+mat-form-field{
+  width:300px;
+}
+
+.sub{
+  background-color:orangered;
+  color:white; height:35px;
+  border:1px solid white;
+}

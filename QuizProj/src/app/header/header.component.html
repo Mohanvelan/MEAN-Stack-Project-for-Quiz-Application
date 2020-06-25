@@ -1,0 +1,28 @@
+
+<div class='container-fluid'>
+	<div class='mt-md-4'>
+    <span style='font-family:Yu Gothic Medium' class='mat-display-1 ml-md-5 mt-md-5'>
+			<strong><i>Q</i>uiz<span class='text-primary'>Master</span></strong></span>
+		<span style='margin-left:800px'></span>
+	 <span *ngIf='!isLoggedIn'>
+		<a routerLink='/login'><button class='btn btn-dark' style='border-radius:50px'> SignIn</button></a>
+		<a routerLink='/register'><button class='btn btn-outline-dark ml-md-3' style='border-radius:50px'> SignUp</button></a>
+		</span>
+		<span *ngIf='isLoggedIn'>
+			  <span style='margin-left:150px'></span>
+			  <a (click)='logOut()'><button class='btn btn-dark' style='border-radius:50px'> SignOut</button></a>
+			</span>
+	</div>
+
+	<mat-toolbar style='background-color:black; opacity:0.7' class='text-light mt-md-4'>
+		<a mat-button routerLink='/home' routerLinkActive='active' routerLinkActiveOptions='{exact:true}'
+		style='font-family:Bahnschrift; border-radius:50px'><i class='fa fa-home'></i>  Home</a>
+		<a mat-button routerLink='/test' routerLinkActive='active'
+		style='font-family:Bahnschrift; border-radius:50px'><i class='fa fa-file-alt'></i>  Tests</a>
+		<a mat-button routerLink='/about' routerLinkActive='active'
+		style='font-family:Bahnschrift; border-radius:50px'><i class='fa fa-info'></i>  About</a>
+		<a mat-button routerLink='/contact' routerLinkActive='active'
+		style='font-family:Bahnschrift; border-radius:50px'><i class='fa fa-envelope'></i>  Contact</a>
+	</mat-toolbar>
+<br>
+</div>

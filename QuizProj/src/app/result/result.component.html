@@ -1,0 +1,66 @@
+
+<div class='container'>
+	<div class='mat-headline mt-md-4'>Your Result!</div>
+  <mat-divider></mat-divider><br>
+	 <div class='mat-title ml-md-5'>Summary</div><br>
+
+	 <div class='mat-subtitle ml-md-5' style='font-size:15px'>You got {{correct}} out of {{totQues}}</div><br>
+
+   <div class='progress ml-md-5' style='height:35px; width:600px'>
+     <div class='progress-bar bg-success' [style.width.%]='correctRes'>Correct {{ correctRes }} &#37;</div>
+     <div class='progress-bar bg-danger' [style.width.%]='wrongRes'>Wrong {{ wrongRes }} &#37;</div>
+	 </div>
+
+  <div class='mat-title mt-md-5 ml-md-5'>Verification Table</div><br>
+
+	 <table class='table table-hover table-striped table-responsive ml-md-5' style='width:500px;'>
+     <thead>
+        <tr><th>Ques No.</th> <th>Your Opt.</th> <th>Correct Opt.</th> <th>Result</th></tr>
+		 </thead>
+		 <tbody>
+        <tr *ngFor='let q of verified'>
+					<td>{{q.qno}}</td> <td>{{q.usrOption}}</td>  <td>{{q.correctAns}}</td>  <td>{{q.flag}}</td>
+			 </tr>
+		</tbody>
+	 </table><br>
+
+	 <div class='mt-md-5'>
+      <div class='mat-title ml-md-5'>More Tests...</div>
+			<div class='row'>
+				<div class='col-md-6'>
+			<mat-list class='ml-md-5 mt-md-2'>
+					<mat-list-item><a routerLink="/test"><button type="submit" class="btn btn-link"
+						style="width:370px;text-align:left" name="l1">
+						<i class='fa fa-file-alt'></i> General Aptitudes</button></a></mat-list-item>
+
+						 <mat-list-item> <a routerLink="/test"><button type="submit" class="btn btn-link"
+							 style="width:370px;text-align:left" name="l2">
+							 <i class='fa fa-file-alt'></i> Verbal Reasoning</button></a></mat-list-item>
+
+					<mat-list-item><a routerLink="/test"> <button type="submit" class="btn btn-link"
+						style="width:370px;text-align:left" name="l3">
+						<i class='fa fa-file-alt'></i> Non-verbal Reasoning</button></a></mat-list-item>
+				</mat-list>
+				</div>
+
+        <div class='col-md-6 mt-md-3' >
+					<mat-list class='ml-md-3 mt-md-2'>
+					<mat-list-item><a routerLink="/test"><button type="submit" class="btn btn-link"
+							 style="width:370px;text-align:left" name="l4">
+							 <i class='fa fa-file-alt'></i> Logical Reasoning</button></a></mat-list-item>
+
+						<mat-list-item><a routerLink="/test"> <button type="submit" class="btn btn-link"
+							 style="width:370px;text-align:left" name="l5">
+							 <i class='fa fa-file-alt'></i> Programming Knowledge</button></a></mat-list-item>
+
+						 <mat-list-item><a routerLink="/test"><button type="submit" class="btn btn-link"
+							 style="width:370px;text-align:left" name="l6">
+							 <i class='fa fa-file-alt'></i> Placement Papers</button></a></mat-list-item>
+
+				</mat-list>
+				</div></div>
+				<br><br>
+	 </div>
+
+
+</div>

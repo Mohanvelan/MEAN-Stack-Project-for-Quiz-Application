@@ -1,0 +1,35 @@
+
+
+<div class="container-fluid">
+
+     <mat-card class='ml-md-5 mt-md-5' style='height:410px;width:600px;'>
+     <mat-card-header>
+    	<div class='mat-headline mb-md-5'>SignIn Page</div>
+      </mat-card-header>
+
+     <mat-card-content>
+    	<form #frm='ngForm' (ngSubmit)='login(frm)'>
+        <p>  <mat-form-field style='width:350px'>
+            <input type="text" name="email" matInput placeholder="Email-id" ngModel #email='ngModel'
+             required>
+             <mat-icon matSuffix ><i class='fa fa-user fa-sm'></i></mat-icon>
+            <mat-error *ngIf='email.touched && email.errors?.required'>Email is required...</mat-error>
+          </mat-form-field></p><br>
+
+        <p><mat-form-field style='width:350px'>
+          <input type="password" name="password" matInput placeholder="Password" ngModel #pwd='ngModel'
+         required>
+         <mat-icon matSuffix ><i class='fa fa-key fa-xs'></i></mat-icon>
+          <mat-error *ngIf='pwd.touched && pwd.errors?.required'>Password is required...</mat-error>
+        </mat-form-field></p><br>
+
+           <a mat-link href="">Forget Password?</a><br>
+          <a mat-link routerLink='/register'>New User?</a>
+            <br><br>
+            <button type='submit' class='btn btn-success'>Signin</button>
+            <br><br>
+    	</form>
+    </mat-card-content>
+    </mat-card>
+    <img src="./assets/mocktest.jfif" style="height:390px;width:400px;position:absolute;top:230px;left:770px">
+    </div>

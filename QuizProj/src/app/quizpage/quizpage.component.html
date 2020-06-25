@@ -1,0 +1,50 @@
+
+<div class='container-fluid'>
+  <div class='mat-headline' style='margin:25px 10px 0 20px'> Topic : {{topic}} <span class='ml-md-4'></span>{{noOfQues}} Questions</div>
+
+    <mat-card style='width:720px;height:450px; margin:20px 0 0 60px'>
+
+       <mat-card-header>
+           <div class='mat-title'>Question - {{pageIndex + 1}}</div>
+       </mat-card-header>
+       <mat-card-content>
+
+           <div class='mat-subtitle ml-md-1 mt-md-3' style='font-size:16px'>{{ques[pageIndex].q}}</div><br>
+           <div style='margin:15px 0 0 10px;'><mat-radio-group matInput [(ngModel)]='options' required>
+          <div class='row'>
+            <div class='col-md-6'>
+             <div style='font-size:15px'><mat-radio-button [value]='ques[pageIndex].c1'>{{ques[pageIndex].c1}}</mat-radio-button></div>
+             </div>
+
+           <div class='col-md-6'>
+           <div style='font-size:15px'><mat-radio-button [value]='ques[pageIndex].c2'>{{ques[pageIndex].c2}}</mat-radio-button></div>
+           </div></div>
+        <br>
+        <div class='row'>
+         <div class='col-md-6'>
+         <div style='font-size:15px'><mat-radio-button [value]='ques[pageIndex].c3'>{{ques[pageIndex].c3}}</mat-radio-button></div>
+       </div>
+
+           <div class='col-md-6'>
+             <div style='font-size:15px'><mat-radio-button [value]='ques[pageIndex].c4'>{{ques[pageIndex].c4}}</mat-radio-button></div>
+           </div>
+         </div>
+          </mat-radio-group>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class='mt-md-3'>
+         <mat-paginator class='mt-md-3' [length]='noOfQues' pageSize='1' [pageIndex]='pageIndex' (page)="updatePage($event)"></mat-paginator>
+        <div> <button type='button' class='btn btn-primary' style='margin-left:400px; margin-top:20px' (click)='setSelect()'>SetAnswer</button>
+        <button type='button' class='btn btn-success' style='margin-left:550px; margin-top:-55px' (click)='submitQuiz()' [disabled]='(ansArray.length==noOfQues)? false:true'>Finish Test</button></div>
+      </mat-card-actions>
+
+
+
+    </mat-card>
+
+<button class='btn btn-dark' style='height:65px;width:150px; position:fixed;left:1155px;top:174px;border-radius:50px;'>Time Left
+  <div style='height:50px;width:130px;font-size:20px' id='timer'></div>
+</button>
+
+
+</div>

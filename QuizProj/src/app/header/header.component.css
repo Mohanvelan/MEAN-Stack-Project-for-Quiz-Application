@@ -1,0 +1,17 @@
+
+.active{
+  background-color:mediumblue;
+}
+
+a{
+  color:white;
+}
+
+mat-toolbar{
+  width:102.1%; height:57px;
+  margin-left:-15px;
+}
+
+.fa{
+  color:white;
+}

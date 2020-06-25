@@ -1,0 +1,56 @@
+
+<div class='container mt-md-2'>
+
+	<div class='mat-title' style="margin-left:70px">List Of Topics</div>
+	<div class='mat-headline' style="margin-left:70px">{{topic.title}}</div>
+
+<div *ngIf='!default'>
+<table style="width:630px;height:390px; margin-left:50px">
+    <tr> <td> <a ><button type="submit" class="btn btn-outline-primary"
+      style="width:270px;text-align:left" #t1 [value]='topic.t1' (click)='routingTo(t1.value)'>{{topic.t1}}</button></a></td>
+
+       <td> <a ><button type="submit" class="btn btn-outline-dark"
+         style="width:270px;text-align:left"#t2 [value]='topic.t2' (click)='routingTo(t2.value)' disabled>{{topic.t2}}</button></a></td> </tr>
+
+    <tr><td><a > <button type="submit" class="btn btn-outline-secondary"
+      style="width:270px;text-align:left" #t3 [value]='topic.t3' (click)='routingTo(t3.value)'disabled>{{topic.t3}}</button></a></td>
+
+       <td><a><button type="submit" class="btn btn-outline-warning"
+         style="width:270px;text-align:left"#t4 [value]='topic.t4' (click)='routingTo(t4.value)' disabled>{{topic.t4}}</button></a></td> </tr>
+
+       <tr><td><a > <button type="submit" class="btn btn-outline-success"
+         style="width:270px;text-align:left" #t5 [value]='topic.t5' (click)='routingTo(t5.value)' disabled>{{topic.t5}}</button></a></td>
+
+       <td><a><button type="submit" class="btn btn-outline-primary"
+         style="width:270px;text-align:left" #t6 [value]='topic.t6' (click)='routingTo(t6.value)' disabled>{{topic.t6}}</button></a></td> </tr>
+
+  </table>
+  <img [src]='topic.img' style='height:450px; width:400px; position:absolute; top:230px; left:850px'>
+</div>
+
+  <div *ngIf='default'>
+  <mat-list style="width:630px;height:400px; margin-left:50px;">
+      <mat-list-item><a [routerLink]="['/test','top1']"><button type="submit" class="btn btn-outline-primary"
+        style="width:370px;text-align:left" name="l1">{{topic.t1}}</button></a></mat-list-item>
+
+         <mat-list-item> <a [routerLink]="['/test','top2']"><button type="submit" class="btn btn-outline-dark"
+           style="width:370px;text-align:left" name="l2">{{topic.t2}}</button></a></mat-list-item>
+
+      <mat-list-item><a [routerLink]="['/test','top3']"> <button type="submit" class="btn btn-outline-secondary"
+        style="width:370px;text-align:left" name="l3">{{topic.t3}}</button></a></mat-list-item>
+
+      <mat-list-item><a [routerLink]="['/test','top4']"><button type="submit" class="btn btn-outline-warning"
+           style="width:370px;text-align:left" name="l4">{{topic.t4}}</button></a></mat-list-item>
+
+        <mat-list-item><a [routerLink]="['/test','top5']"> <button type="submit" class="btn btn-outline-success"
+           style="width:370px;text-align:left" name="l5">{{topic.t5}}</button></a></mat-list-item>
+
+         <mat-list-item><a [routerLink]="['/test','top6']"><button type="submit" class="btn btn-outline-primary"
+           style="width:370px;text-align:left" name="l6">{{topic.t6}}</button></a></mat-list-item>
+
+    </mat-list>
+    <img [src]='topic.img' style='height:450px; width:400px; position:absolute; top:230px; left:850px'>
+  </div>
+  </div>
+
+  <br><br><br>

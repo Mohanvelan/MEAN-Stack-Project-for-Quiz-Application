@@ -1,0 +1,64 @@
+
+<div class="container-fluid" style="background-color:gainsboro; padding:30px 0 30px 0">
+  <mat-grid-list cols='10' rowHeight='500px'>
+    <mat-grid-tile colspan='5'>
+  <mat-card style="background-color:white; margin:10px 0 10px 0; padding-left:20px; width:500px;
+   height:515px; border-top:18px solid blue">
+   <mat-card-header>
+   <div class='mat-headline mt-md-3'>Quiz Setter</div></mat-card-header>
+   <mat-card-content class='ml-md-5'>
+   <form #frm='ngForm' (ngSubmit)='quizSetter(frm)'>
+       <p><mat-form-field>
+        <input type="text" name="tname" matInput placeholder="Your Topic" [ngModel]='subTopic'>
+      </mat-form-field></p><br>
+
+      <p><mat-form-field>
+        <mat-label>Question Type</mat-label>
+              <mat-select name="qType" matInput>
+                <mat-option>---Select Qtype---</mat-option>
+                <mat-option value='Easy'>Easy</mat-option>
+                <mat-option value='Medium'>Medium</mat-option> <mat-option value='Hard'>Hard</mat-option>
+            </mat-select>
+     </mat-form-field></p><br>
+
+     <p><mat-form-field>
+       <mat-label>No. of Questions</mat-label>
+             <mat-select name="noOfQues" matInput ngModel>
+               <mat-option>---Select noOfQues---</mat-option>
+               <mat-option value='5'>5</mat-option>
+               <mat-option value='10'>10</mat-option> <mat-option value='15'>15</mat-option>
+           </mat-select>
+    </mat-form-field></p><br>
+
+    <p><mat-form-field>
+      <input type="number" matInput placeholder="Enter time needed (in min)" name="totMin" ngModel>
+
+   </mat-form-field></p><br>
+
+       <button type='submit' class='btn btn-dark' style='border-radius:50px'>Create Quiz</button><br>
+   </form>
+   </mat-card-content>
+ </mat-card>
+</mat-grid-tile>
+
+<mat-grid-tile colspan='5'>
+<div id='panel'>
+  <div class='mat-title'>Instructions for Quiz...</div>
+  <ul>
+    <li style="padding-top:10px">Do not refresh the page</li>
+
+     <li style="padding-top:10px">Total number of questions : {{noOfQues}}</li>
+
+     <li style="padding-top:10px">Time alloted :  {{totMin}} minutes</li>
+
+      <li style="padding-top:10px">Each question carry 1 mark; no negative marks</li>
+      <li style="padding-top:10px">Once you finishes test, click submit button</li>
+      <li style="padding-top:10px">Best Of Luck :)</li>
+    </ul>
+    <br>
+    <a [routerLink] = "['/quizpage',subTopic,noOfQues,totMin]"> <button name='start' class="btn btn-primary" [disabled]='!start'
+    style="height:37px;width:100px;border-radius:50px">Start</button></a>
+</div>
+</mat-grid-tile>
+</mat-grid-list>
+</div>
